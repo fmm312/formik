@@ -12,10 +12,10 @@ function App() {
         }}
       >
         <Form>
-          <h1>Formik Form</h1>
-          <span className="label">Nome</span>
+          <h1>Form</h1>
+          <span className="label">Name</span>
           <Field className="Field" name="name" type="text" />
-          <span className="label">Sobrenome</span>
+          <span className="label">Surname</span>
           <Field className="Field" name="surname" type="text" />
           <button type="submit">Submit</button>
         </Form>
