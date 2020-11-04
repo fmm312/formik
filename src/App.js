@@ -1,23 +1,25 @@
-import logo from './logo.svg';
 import './App.css';
+import { Formik, Field, Form } from "formik";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App">     
+      <Formik
+        initialValues={{ name: "", surname: "" }}
+        onSubmit={async values => {
+          await new Promise(resolve => setTimeout(resolve, 500));
+          alert(JSON.stringify(values, null, 2));
+        }}
+      >
+        <Form>
+          <h1>Formik Form</h1>
+          <span className="label">Nome</span>
+          <Field className="Field" name="name" type="text" />
+          <span className="label">Sobrenome</span>
+          <Field className="Field" name="surname" type="text" />
+          <button type="submit">Submit</button>
+        </Form>
+      </Formik>
     </div>
   );
 }
